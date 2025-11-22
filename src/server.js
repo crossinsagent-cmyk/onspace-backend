@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 
 app.get('/api/health', (req, res) => res.json({ ok: true }));
 
-app.post('/api/generate', requireAuth, async (req, res) => {
+app.post('/api/generate', async (req, res) => {
   try {
     const { brief, model = 'gpt-5-nano' } = req.body;
     if (!brief) return res.status(400).json({ error: 'brief is required' });
