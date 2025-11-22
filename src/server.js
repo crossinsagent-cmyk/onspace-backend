@@ -16,7 +16,7 @@ app.get('/api/health', (req, res) => res.json({ ok: true }));
 
 app.post('/api/generate', async (req, res) => {
   try {
-    const { brief, model = 'gpt-5-nano' } = req.body;
+    const { brief, model = 'gpt-40-mini' } = req.body;
     if (!brief) return res.status(400).json({ error: 'brief is required' });
 
     const system = `You are a JSON-only UI generator. Output EXACTLY valid JSON matching schema v1. If you cannot produce it, output {}.`;

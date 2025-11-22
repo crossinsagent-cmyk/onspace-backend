@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-export async function callLLM({ messages, model = 'gpt-5-nano', temperature = 0.0, max_tokens = 4000 }) {
+export async function callLLM({ messages, model = 'gpt-4o-mini', temperature = 0.0, max_tokens = 4000 }) {
   const provider = process.env.PRIMARY_PROVIDER || 'openai';
 
   if (provider === 'openai') {
